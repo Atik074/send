@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input</title>
+    <style>
+        div{
+            text-align: center;
+            border: 3px solid red;
+            padding: 20px;
+            width: 50%;
+            margin:100px auto;
+            border-radius: 0px 15px;
+        }
+    #heading-title{
+        font-size: 28px;
+        font-weight: 800;
+        font-style: italic;
+        color: green;
+    }
+    #input-field{
+        padding: 15px;
+        font-size: 28px;
+        margin-bottom:15px;
+        border: 3px solid #16a085;
+        border-radius: 15px 0px;
+        color:#F79F1F;
+        font-style: italic;
+        text-align: center;
+    }
+    #btn{
+        padding: 11px 35px;
+        font-size: 26px;
+        border-radius: 10px;
+        border: 3px solid #16a085;
+      
+    }
+
+    </style>
+</head>
+<body>
+    <div >
+        <h1 id="heading-title">Type Your Name</h1>
+        <input id="input-field" type="text" placeholder="Please type here 💌"><br>
+        <button id="btn" disabled>Click Me</button>
+    </div>
+   
+
+    <script>
+        document.getElementById('input-field').addEventListener('keyup', function(event){
+            const inputText = event.target.value
+            console.log(inputText);
+
+            const button = document.getElementById('btn')
+            if(inputText === 'Tamanna'){
+                button.removeAttribute('disabled')
+                button.style.color = 'red'
+            }
+            else{
+                button.setAttribute('disabled',true)
+
+            }
+        })
+
+  const btn = document.getElementById('btn')
+  btn.addEventListener('click', function(){
+            const heading = document.getElementById('heading-title')
+             heading.innerText='I Love You Dear ♥♥'
+             heading.style.color = 'red'
+           
+        })
+
+    
+    </script>
+</body>
+</html>
